@@ -5,6 +5,25 @@
  * @author Lea Verou
  */
 
+.toolbar-item {
+  text-align: right;
+}
+
+.toolbar-item a {
+  cursor: pointer;
+  background-color: #e97e71;
+  color: white;
+  margin-top: 12px;
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 3px;
+}
+
+.toolbar-item a:hover {
+  background-color: #e85847;
+  color: white;
+}
+
 code {
 	color: #333;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
