@@ -3,3 +3,8 @@
   max-width: 720px;
   margin: 40px auto 0;
 }
+
+.callout {
+  background-color: #eee;
+  padding: 24px;
+}
