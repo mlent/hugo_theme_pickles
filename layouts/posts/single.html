@@ -1,6 +1,28 @@
 {{ partial "header.html" . }}
 {{ $baseurl := .Site.BaseURL }}
 <article class="p-article">
+  <ul class="p-share">
+    <li>
+      <a
+        href="https://twitter.com/share?text={{ .Title }} via @monicalent&url={{ .Permalink }}"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;">
+        <svg viewBox="0 0 64 64" class="c-links__icon">
+          <title>Share on Twitter</title>
+          <use xlink:href="#icon-twitter"></use>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://news.ycombinator.com/submitlink?u={{ .Permalink }}&t={{ .Title }}"
+        onclick="window.open(this.href, 'hn-share', 'width=550,height=350'); return false;">
+        <svg viewBox="0 0 64 64" class="c-links__icon">
+          <title>Share on Hacker News</title>
+          <use xlink:href="#icon-hackernews"></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
   <header>
     <h1>{{ .Title }}</h1>
     <div>
