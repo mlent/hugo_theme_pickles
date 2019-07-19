@@ -54,8 +54,8 @@
   {{- with .Site.Params.favicon }}
   <link rel='icon' type='image/x-icon' href="{{ . | absURL }}" />
   {{- end -}}
-  {{ if eq .URL "/" }}
-  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  {{ if in .URL "/blog" }}
+    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
   {{ end }}
   <script type="text/javascript" src="{{ .Site.BaseURL }}js/bundle.js"></script>
   <script type="text/javascript" src="{{ .Site.BaseURL }}js/prism.js"></script>
