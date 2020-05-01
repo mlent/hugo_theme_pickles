@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 {{ $baseurl := .Site.BaseURL }}
 <article class="p-article">
-  <header>
+  <header class="p-article__header">
     <h1>{{ .Title }}</h1>
   </header>
   {{ with .Params.thumbnail }}
