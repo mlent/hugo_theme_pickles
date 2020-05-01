@@ -1,10 +1,10 @@
 {{ partial "header.html" . }}
 <h1 class="c-title">Blog posts</h1>
+
 {{ range $index, $page := (.Paginate (where .Data.Pages "Type" "posts")).Pages }}
-{{ if ne $index 0 }}
+    {{ .Render "li" }}
 {{ end }}
-{{ .Render "li" }}
-{{ end }}
+
 {{ partial "pagination.html" .Paginator }}
 {{ partial "siteinfo.html" . }}
 {{ partial "footer.html" . }}
