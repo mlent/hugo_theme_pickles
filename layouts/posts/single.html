@@ -26,20 +26,22 @@
   <header>
     <h1>{{ .Title }}</h1>
     <div>
-      <div class="c-time">
-        Posted on
+      <div class="c-time" style="display: flex; align-items: center">
+        Posted on&nbsp;
         <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
           {{ .Date.Format "Jan 2, 2006" }}
-        </time>
+        </time>&nbsp;by Monica Lent &nbsp; <a href="https://twitter.com/monicalent?ref_src=twsrc%5Etfw" style="margin-left: 12px" class="twitter-follow-button" data-show-screen-name="false" data-show-count="true">Follow</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
-      {{ range .Params.tags }}
-      <a href="{{ $baseurl }}tags/{{ . | urlize }}" class="c-tag">{{ . }}</a>
-      {{ end }}
     </div>
   </header>
   {{ with .Params.thumbnail }}
     <img src="{{ . }}" alt="thumbnail" class="p-article__thumbnail">
   {{ end }}
+  <div>
+    {{ range .Params.tags }}
+      <a href="{{ $baseurl }}tags/{{ . | urlize }}" class="c-tag">{{ . }}</a>
+    {{ end }}
+  </div>
   <section id="js-article" class="p-article__body">
     {{ .Content }}
   </section>
