@@ -26,11 +26,14 @@
   <header>
     <h1>{{ .Title }}</h1>
     <div>
-      <div class="c-time" style="display: flex; align-items: center">
+      <div class="c-time">
         Posted on&nbsp;
         <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
           {{ .Date.Format "Jan 2, 2006" }}
-        </time>&nbsp;by Monica Lent &nbsp; <a href="https://twitter.com/monicalent?ref_src=twsrc%5Etfw" style="margin-left: 12px" class="twitter-follow-button" data-show-screen-name="false" data-show-count="true">Follow</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </time> by Monica Lent &nbsp; <div style="position: relative; top: 4px; display: inline-block;"><a href="https://twitter.com/monicalent?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-show-count="true">Follow</a></div>
+          
+
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     </div>
   </header>
