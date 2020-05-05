@@ -1,7 +1,14 @@
 {{ partial "header.html" . }}
+
+{{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
+
+{{ if (eq $paginator.PageNumber 1) }}
+  {{ partial "subscribe.html" . }}
+{{ end }}
+
 <h1 class="c-title">Blog posts</h1>
 
-{{ range $index, $page := (.Paginate (where .Data.Pages "Type" "posts")).Pages }}
+{{ range $index, $page := $paginator.Pages }}
     {{ .Render "li" }}
 {{ end }}
 
