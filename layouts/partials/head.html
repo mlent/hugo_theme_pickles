@@ -22,6 +22,7 @@
   <meta name="author" content="{{ .Site.Params.author }}"/>
   <meta property="og:site_name" content="{{ .Site.Title }}" />
   <meta property="og:url" content="{{ .Permalink }}" />
+  <link rel="canonical" href="{{ .Permalink }}" />
 
   {{ if .Params.thumbnail }}
   <meta property="og:image" content="{{ .Params.thumbnail | absURL }}" />
