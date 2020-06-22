@@ -4,8 +4,21 @@
 
 <h1 class="c-title">Blog posts</h1>
 
+<p><strong>Featured articles</strong></p>
+
 {{ range $index, $page := $paginator.Pages }}
+  {{ if $page.Params.featured }}
     {{ .Render "li" }}
+  {{ end }}
+{{ end }}
+
+<br/><br/>
+<p><strong>Other articles</strong></p>
+
+{{ range $index, $page := $paginator.Pages }}
+  {{ if not $page.Params.featured }}
+    {{ .Render "li" }}
+  {{ end }}
 {{ end }}
 
 {{ partial "pagination.html" .Paginator }}
